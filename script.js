@@ -1,9 +1,9 @@
-// 日本語コメント: DOM要素取得
+// DOM要素取得
 const birthdayInput = document.getElementById('birthday');
 const lifespanInput = document.getElementById('lifespan');
 const grid = document.getElementById('grid');
 
-// 日本語コメント: ローカルストレージから設定を読み込む
+// ローカルストレージから設定を読み込む
 function loadSettings() {
     const savedBirthday = localStorage.getItem('birthday');
     const savedLifespan = localStorage.getItem('lifespan');
@@ -11,13 +11,13 @@ function loadSettings() {
     if (savedLifespan) lifespanInput.value = savedLifespan;
 }
 
-// 日本語コメント: 設定を保存する
+// 設定を保存する
 function saveSettings() {
     localStorage.setItem('birthday', birthdayInput.value);
     localStorage.setItem('lifespan', lifespanInput.value);
 }
 
-// 日本語コメント: グリッドを描画する
+// グリッドを描画する
 function drawGrid() {
     grid.innerHTML = '';
     const birthday = new Date(birthdayInput.value);
@@ -40,7 +40,7 @@ function drawGrid() {
     }
 }
 
-// 日本語コメント: 入力変更時の処理
+// 入力変更時の処理
 birthdayInput.addEventListener('change', () => {
     saveSettings();
     drawGrid();
@@ -51,6 +51,6 @@ lifespanInput.addEventListener('change', () => {
     drawGrid();
 });
 
-// 日本語コメント: 初期化
+// 初期化
 loadSettings();
 drawGrid();
