@@ -1,2 +1,16 @@
-# life-weeks
-Visualize the time left in your life.
+# Life Weeks Visualization Web App
+
+このリポジトリは人生を週単位で可視化するシンプルなウェブアプリです。誕生日と寿命を入力すると、残りの週をグリッドで表示します。データはブラウザのLocalStorageに保存されるため、次回アクセス時にも設定が保持されます。
+
+## ファイル構成
+
+- `index.html` — メインHTML。入力フォームとグリッド用コンテナを含みます。
+- `style.css` — レイアウトとスタイルを定義します。
+- `script.js` — 入力値の取得、グリッド生成、LocalStorage処理を担当します。
+- `README.md` — このドキュメント。
+
+## 使い方
+
+1. `index.html` をブラウザで開きます。
+2. 誕生日と寿命を入力すると、グリッドが自動で更新されます。
+3. 設定は自動的に保存され、再訪時にも利用できます。
