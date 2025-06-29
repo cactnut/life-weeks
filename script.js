@@ -136,7 +136,13 @@ birthdayInput.addEventListener('change', () => {
 });
 
 // 寿命変更時
-deathdayInput.addEventListener('change', () => {
+// 手動入力検知
+deathdayInput.addEventListener('input', () => {
+    deathdayManuallyChanged = true;
+});
+
+// フォーカスを外した時のみ自動補正
+deathdayInput.addEventListener('blur', () => {
     // 無効日付なら自動補正
     if (!isValidDate(deathdayInput.value)) {
         const bday = new Date(birthdayInput.value);
@@ -145,8 +151,7 @@ deathdayInput.addEventListener('change', () => {
         deathdayInput.value = formatYMD(newDeath);
         deathdayManuallyChanged = false;
     } else {
-        deathdayManuallyChanged = true;
-        // 寿命が誕生日より前になった場合、自動修正
+        // 寿命が誕生日より前なら自動修正
         if (new Date(deathdayInput.value) <= new Date(birthdayInput.value)) {
             const bday = new Date(birthdayInput.value);
             const newDeath = new Date(bday);
